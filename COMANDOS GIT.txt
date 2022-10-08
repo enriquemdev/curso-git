@@ -1,0 +1,71 @@
+pwd - muestra la uri de la carpeta en terminal
+ls - muestra archivos que contiene la carpeta en terminal
+clear / [ctrl + l] - limpia la terminal
+rm [archivo] - elimina el archivo
+
+
+----------------- GIT --------------------
+
+git init
+    Crear repositorio de git (en la carpeta actual)
+
+git status 
+    Estatus actual de nuestro repositorio
+    Dice nos da los archivos que no esta trackeando git (untracked files)
+    Dice los archivos a hacer commit (que estan en staging area despues de hacer git add)
+    Dice los archivos que han sido commiteados pero luego modificados
+
+git add [nombreArchivo] 
+    Añade al siguiente stage del flujo (A STAGING AREA)
+    Si en [nombreArchivo] se pone .  se agregan todos los archivos de la carpeta
+
+git commit -m "[mensaje]"
+    Hacer un commit (confirmar cambios)
+    -m (m de mensaje)
+    [mensaje] (mensaje descriptivo de lo que se agrega en este commit)
+
+
+GIT CONFIG
+    Al tratar de hacer un commit se necesita de tener configurado el correo y nombre
+
+    git config --global user.email "[correo]"
+        ejemplo [correo] -> you@exameple.com
+
+    git config --global user.name "[nombre]"
+        ejemplo [correo] -> Enrique Muñoz
+
+
+git log
+    Muestra el registro de commits con su autor y fecha e identificador unico
+    Se le puede poner --oneline al final para ver cada commit en una linea
+
+git checkout [commit id/rama]
+    Sirve para moverse sobre los commits realizados(asi volver a una etapa anterior o posterior del codigo)
+    En [commit id/rama] se debe poner los primeros caracteres del commit id que sale en git log
+    si se escribe master en [commit id/rama] vuelve al ultimo commit realizado (y desaparece warning)
+
+
+GIT RESET
+
+    git reset [commit id]
+        Deshace el commit especificado y lo elimina del comit logSe le pasa el commit id del git log
+        Luego hay que volver a hacer add y commit cuando se quiera subir el proyecto
+        Recordar que los commits son las versiones del codigo, entonces si una version puede mejorar se hace reset.
+    
+    git reset --hard [commit id]
+        Este te devuelve el codigo al commmit especificado y borra todos los commits realizados despues de el
+
+
+git restore [nombreArchivo]
+    si se elimino un archivo y se quiere recuperar (el archivo del ultimo commit)
+
+
+/*
+Cada vez que se hace un cambio se tiene que pasar a staging area
+(git add)
+
+y luego commit again
+git commmit
+
+
+*/
