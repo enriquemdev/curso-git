@@ -94,6 +94,9 @@ GIT PUSH
     git push
         Despues de hacer el commit (Una vez hecho el comando de arriba ya no es necesario especificar con esto basta)
 
+    git push -u origin [nombreRama]
+        con este comando sube a github los commits realizados dentro de la rama especificada (crea esa rama)
+
 
 git clone [claveRepositorio]
     Clonar el repositorio subido a github(en su ultimo commit) a la direccion en que se encuentre la linea de comandos
