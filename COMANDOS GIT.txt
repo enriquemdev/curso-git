@@ -2,6 +2,10 @@ pwd - muestra la uri de la carpeta en terminal
 ls - muestra archivos que contiene la carpeta en terminal
 clear / [ctrl + l] - limpia la terminal
 rm [archivo] - elimina el archivo
+rm -r [archivo] - elimina el directorio con todo lo que contenga (r de recursivo)
+rm -rf [archivo] - lo mismo que el anterior pero con la f de forzar(por ejemplo repos de git ya que tienen archivos protegidos)
+
+
 
 
 ----------------- GIT --------------------
@@ -59,6 +63,35 @@ GIT RESET
 git restore [nombreArchivo]
     si se elimino un archivo y se quiere recuperar (el archivo del ultimo commit)
 
+
+
+----------------- GITHUB --------------------
+
+Subir repo local a github:
+    git remote add origin git@github.com:enriquemdev/curso-git.git
+    git branch -M main
+    git push -u origin main
+
+git remote -ver
+    ver el origin, de donde esta la direccion a la que esta conectado remotamente
+
+create ssh key para hacer los push y pull
+    https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+git push -u origin master
+    hacer el git push a la rama master del repo de github (subir el codigo a github). 
+
+git clone [claveRepositorio]
+    Clonar el repositorio subido a github(en su ultimo commit) a la direccion en que se encuentre la linea de comandos
+    [claveRepositorio] se refiere a lo que sale en github en el boton clone (en ssh). ej: git@github.com:enriquemdev/curso-git.git
+
+Configurar ssh agent
+    ssh agent es para no estar poniendo contraseña de la clave privada cada vez que se hace un git clone(u otros comandos)
+    Se pedira una vez y se mantendrá mientras la terminal en la que se configuró siga abierta
+    Pasos:
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_ed25519
+        Escribir contraseña clave privada
 
 /*
 Cada vez que se hace un cambio se tiene que pasar a staging area
