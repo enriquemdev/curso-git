@@ -43,10 +43,18 @@ git log
     Muestra el registro de commits con su autor y fecha e identificador unico
     Se le puede poner --oneline al final para ver cada commit en una linea
 
-git checkout [commit id/rama]
-    Sirve para moverse sobre los commits realizados(asi volver a una etapa anterior o posterior del codigo)
-    En [commit id/rama] se debe poner los primeros caracteres del commit id que sale en git log
-    si se escribe master en [commit id/rama] vuelve al ultimo commit realizado (y desaparece warning)
+
+GIT CHECKOUT
+
+    git checkout [commit id/rama]
+        Sirve para moverse sobre los commits realizados(asi volver a una etapa anterior o posterior del codigo)
+        En [commit id/rama] se debe poner los primeros caracteres del commit id que sale en git log
+        si se escribe master en [commit id/rama] vuelve al ultimo commit realizado (y desaparece warning)
+
+    git checkout -b [nombreRama]
+        b de branch (rama)
+        Sirve para crear una rama del codigo de manera local y asi poder trabajar mejor en equipo
+        Automaticamente crea la rama [nombreRama] y te transporta a ella
 
 
 GIT RESET
@@ -78,8 +86,14 @@ git remote -ver
 create ssh key para hacer los push y pull
     https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-git push -u origin master
-    hacer el git push a la rama master del repo de github (subir el codigo a github). 
+
+GIT PUSH
+    git push -u origin master
+        hacer el git push a la rama master del repo de github (subir el codigo a github).
+
+    git push
+        Despues de hacer el commit (Una vez hecho el comando de arriba ya no es necesario especificar con esto basta)
+
 
 git clone [claveRepositorio]
     Clonar el repositorio subido a github(en su ultimo commit) a la direccion en que se encuentre la linea de comandos
@@ -92,6 +106,11 @@ Configurar ssh agent
         eval "$(ssh-agent -s)"
         ssh-add ~/.ssh/id_ed25519
         Escribir contraseña clave privada
+
+
+git branch
+    Muestra las ramas(branches) existentes del proyecto
+
 
 /*
 Cada vez que se hace un cambio se tiene que pasar a staging area
